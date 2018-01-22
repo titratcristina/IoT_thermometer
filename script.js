@@ -68,7 +68,7 @@ function update() {
     $('#umid_s').addClass('w3-blue');
     $('#umid_s').text('Actualizare...');
 
-    $.get('http://192.168.1.200/temp', function (data) {
+    $.get(location.protocol+'//'+location.host+'/temp', function (data) {
         gg1.refresh(data);
     }).done(function () {
         $('#temp_s').removeClass('w3-blue');
@@ -84,7 +84,7 @@ function update() {
         console.log('ERROR 4 temp');
     }).always(function () {});
 
-    $.get('http://192.168.1.200/umid', function (data) {
+    $.get(location.protocol+'//'+location.host+'/umid', function (data) {
         console.log('OK 4 umid');
         gg2.refresh(data);
     }).done(function () {
